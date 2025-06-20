@@ -1,0 +1,60 @@
+{
+  "name": "payrollpro-sme-system",
+  "version": "1.0.0",
+  "description": "PayrollPro: A user-friendly Payroll & HR system for SMEs in Zimbabwe. Easy to set up and run!",
+  "main": "backend/simple-server.js",
+  "scripts": {
+    "setup": "echo \"To set up PayrollPro:\" && echo \"  On Windows: open Command Prompt and run 'npm run setup:windows' or double-click 'setup.bat'\" && echo \"  On Linux/macOS: open Terminal and run 'npm run setup:unix' or 'bash setup.sh'\" && echo \"After setup, run 'npm start' or 'npm run dev' to start the application.\"",
+    "setup:windows": "setup.bat",
+    "setup:unix": "bash setup.sh",
+    "start": "npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "nodemon backend/simple-server.js",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build:frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "serve": "NODE_ENV=production node backend/simple-server.js",
+    "lint": "echo \"Linting not yet configured. Consider setting up ESLint.\"",
+    "test": "echo \"Tests not yet configured. Consider setting up Jest or Mocha for backend and frontend.\"",
+    "postinstall": "echo \"Installing frontend dependencies...\" && npm install --prefix frontend && echo \"Frontend dependencies installed.\""
+  },
+  "keywords": [
+    "payroll",
+    "hr",
+    "sme",
+    "zimbabwe",
+    "zimra",
+    "employee management",
+    "payslip",
+    "javascript",
+    "react",
+    "nodejs"
+  ],
+  "author": "PayrollPro Team (via Factory AI)",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.1.2",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.14",
+    "pdfkit": "^0.15.0",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
+}
